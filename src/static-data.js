@@ -40,14 +40,17 @@ function generateMsgs(numberOfMsgs) {
 }
 
 const users = generateUsers(10);
+
 export const contacts = _.mapKeys(users, 'user_id');
 export const getMessages = (messagesPerUser) => {
   const messages = {};
+
   _.forEach(users, (user) => {
     messages[user.user_id] = {
       ..._.mapKeys(generateMsgs(messagesPerUser), 'number'),
     };
   });
+
   return messages;
 };
 

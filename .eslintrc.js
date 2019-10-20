@@ -21,6 +21,13 @@ module.exports = {
         "react"
     ],
     "rules": {
-        "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
+        "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+        "padding-line-between-statements": [
+            "warn",
+            { blankLine: "always", prev: "*", next: "return" },
+            { blankLine: "always", prev: ["const", "let", "var"], next: "*" },
+            { blankLine: "any", prev: ["const", "let", "var"], next: ["const", "let", "var"] },
+            { blankLine: "always", prev: "directive", next: "*" }, { blankLine: "any", prev: "directive", next: "directive" }
+        ]
     }
 };

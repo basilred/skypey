@@ -6,6 +6,7 @@ import store from '../store';
 
 function App() {
   const { contacts } = store.getState();
+
   return (
     <div className="App">
       <Sidebar contacts={Object.values(contacts)} />
