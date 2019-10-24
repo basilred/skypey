@@ -1,13 +1,14 @@
-/* eslint-disable react/prop-types */
 import React from 'react';
 import PropTypes from 'prop-types';
+import { setActiveUserId } from '../actions';
+import store from '../store';
 import './User.css';
 
 const User = ({ user }) => {
   const { name, profile_pic: profilePic, status } = user;
 
   return (
-    <div className="User">
+    <div className="User" onClick={handleUserClick.bind(null, user)}>
       <img src={profilePic} alt={name} className="User__pic" />
       <div className="User__details">
         <p className="User__details-name">{name}</p>
@@ -26,5 +27,10 @@ User.propTypes = {
     user_id: PropTypes.string,
   }).isRequired,
 };
+
+function handleUserClick({ user_id: userId }) {
+  console.log(userId);
+  store.dispatch(setActiveUserId(userId));
+}
 
 export default User;
