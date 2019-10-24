@@ -21,7 +21,6 @@ const User = ({ user }) => {
 User.propTypes = types.user;
 
 function handleUserClick({ user_id: userId }) {
-  console.log(userId);
   store.dispatch(setActiveUserId(userId));
 }
 
