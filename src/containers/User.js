@@ -1,8 +1,8 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { setActiveUserId } from '../actions';
 import store from '../store';
 import './User.css';
+import * as types from '../types';
 
 const User = ({ user }) => {
   const { name, profile_pic: profilePic, status } = user;
@@ -18,15 +18,7 @@ const User = ({ user }) => {
   );
 };
 
-User.propTypes = {
-  user: PropTypes.exact({
-    email: PropTypes.string,
-    name: PropTypes.string.isRequired,
-    profile_pic: PropTypes.string.isRequired,
-    status: PropTypes.string.isRequired,
-    user_id: PropTypes.string,
-  }).isRequired,
-};
+User.propTypes = types.user;
 
 function handleUserClick({ user_id: userId }) {
   console.log(userId);

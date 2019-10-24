@@ -1,4 +1,5 @@
 import React from 'react';
+import * as types from '../types';
 
 const ChatWindow = ({ activeUserId }) => (
   <div className="ChatWindow">
@@ -7,5 +8,7 @@ const ChatWindow = ({ activeUserId }) => (
     {activeUserId}
   </div>
 );
+
+ChatWindow.propTypes = types.activeUserId;
 
 export default ChatWindow;

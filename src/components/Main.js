@@ -1,4 +1,5 @@
 import React from 'react';
+import * as types from '../types';
 import './Main.css';
 import Empty from './Empty';
 import ChatWindow from './ChatWindow';
@@ -14,5 +15,7 @@ const Main = ({ user, activeUserId }) => {
 
   return <main className="Main">{renderMainContent()}</main>;
 };
+
+Main.propTypes = { ...types.user, ...types.activeUserId };
 
 export default Main;

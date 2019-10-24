@@ -1,5 +1,6 @@
 import React from 'react';
 import './Empty.css';
+import * as types from '../types';
 
 const Empty = ({ user }) => {
   const { name, profile_pic: profilePic, status } = user;
@@ -25,5 +26,7 @@ const Empty = ({ user }) => {
     </div>
   );
 };
+
+Empty.propTypes = types.user;
 
 export default Empty;
