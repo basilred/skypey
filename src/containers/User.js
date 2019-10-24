@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
+import PropTypes from 'prop-types';
 import './User.css';
 
 const User = ({ user }) => {
@@ -14,6 +15,16 @@ const User = ({ user }) => {
       </div>
     </div>
   );
+};
+
+User.propTypes = {
+  user: PropTypes.exact({
+    email: PropTypes.string,
+    name: PropTypes.string.isRequired,
+    profile_pic: PropTypes.string.isRequired,
+    status: PropTypes.string.isRequired,
+    user_id: PropTypes.string,
+  }).isRequired,
 };
 
 export default User;
