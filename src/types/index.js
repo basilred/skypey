@@ -11,10 +11,7 @@ const user = {
 };
 
 const activeUserId = {
-  activeUserId: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.oneOf([null]), // for null
-  ]).isRequired,
+  activeUserId: PropTypes.string,
 };
 
 const contacts = {
