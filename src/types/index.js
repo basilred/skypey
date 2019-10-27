@@ -18,4 +18,12 @@ const contacts = {
   contacts: PropTypes.arrayOf(user.user).isRequired,
 };
 
-export { user, activeUserId, contacts };
+const message = {
+  is_user_msg: PropTypes.bool,
+  number: PropTypes.number,
+  text: PropTypes.string,
+};
+
+export {
+  user, message, activeUserId, contacts,
+};

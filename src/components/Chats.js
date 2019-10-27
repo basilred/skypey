@@ -1,4 +1,5 @@
 import React from 'react';
+import * as types from '../types';
 import './Chats.css';
 
 const Chat = ({ message }) => {
@@ -8,6 +9,8 @@ const Chat = ({ message }) => {
     <span className={`Chat ${isUserMsg ? 'is-user-msg' : ''}`}>{text}</span>
   );
 };
+
+Chat.propTypes = types.message;
 
 class Chats extends React.Component {
   render() {
